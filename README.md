@@ -1,2 +1,2 @@
 # Portofolio
-School projects
+Personal projects
