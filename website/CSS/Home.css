@@ -12,7 +12,7 @@
 .u-section-1 .u-image-1 {
   width: 422px;
   height: 422px;
-  background-image: url("images/MihaiSebastianAndrei.jpg");
+  background-image: url("../images/MihaiSebastianAndrei.jpg");
   background-position: 50% 50%;
   margin: -343px auto 0;
 }
@@ -141,7 +141,7 @@
     margin-left: 0;
   }
 } .u-section-3 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/photo1621.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/photo1621.jpg");
   background-position: 50% 50%;
 }
 
