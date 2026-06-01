@@ -7,7 +7,7 @@ function loadFooter(basePath) {
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-1">
-                  <h3 class="u-align-center-sm u-align-center-xs u-text u-text-default u-text-1">Ultima postare</h3>
+                  <h3 class="u-align-center-sm u-align-center-xs u-text u-text-default u-text-1">Last Post</h3>
                   <div class="u-clearfix u-custom-html u-custom-html-1">
                     <ul class="style1">
                       <li><a href="${basePath}Infrarosu.html">Comunicare infraroșu</a></li>
@@ -19,7 +19,7 @@ function loadFooter(basePath) {
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
-                  <p class="u-large-text u-text u-text-default u-text-variant u-text-2"> URMĂREȘTEMĂ PE</p>
+                  <p class="u-large-text u-text u-text-default u-text-variant u-text-2"> Connect with me</p>
                   <div class="u-social-icons u-spacing-20 u-social-icons-1">
                     <a class="u-social-url" target="_blank" href="https://www.facebook.com/mer00s/" title="Facebook">
                       <span class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-1">
