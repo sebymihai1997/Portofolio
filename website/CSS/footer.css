@@ -1,0 +1,120 @@
+/* --- UNIVERSAL FOOTER LAYOUT & BACKGROUND --- */
+.custom-shared-footer {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/photo1.jpg") !important;
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.custom-shared-footer .u-sheet-1 {
+  min-height: 277px;
+}
+
+.custom-shared-footer .u-layout-wrap-1 {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.custom-shared-footer .u-layout-cell-1,
+.custom-shared-footer .u-layout-cell-2 {
+  min-height: 275px;
+}
+
+.custom-shared-footer .u-container-layout-1 {
+  padding: 30px 0;
+}
+
+.custom-shared-footer .u-container-layout-2 {
+  padding: 30px;
+}
+
+.custom-shared-footer .u-text-1 {
+  margin: 0 auto 0 30px;
+  color: #ffffff !important;
+}
+
+.custom-shared-footer .u-text-2 {
+  font-size: 1.25rem;
+  margin: 58px 50px 0 auto;
+  color: #ffffff !important;
+}
+
+.custom-shared-footer .u-custom-html-1 {
+  min-height: 117px;
+  margin: 19px 111px 0 0;
+}
+
+/* --- SOCIAL ICONS WRAPPER --- */
+.custom-shared-footer .u-social-icons-1 {
+  white-space: nowrap;
+  height: 48px;
+  min-height: 16px;
+  width: 116px;
+  min-width: 52px;
+  margin: 19px 79px 0 auto;
+}
+
+/* --- FIX: PREVENT VERTICAL STACKING / DOUBLE SVG BUG --- */
+.custom-shared-footer .u-icon {
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-block !important;
+  margin: 0 8px !important;
+  position: relative !important;
+  vertical-align: middle !important;
+}
+
+.custom-shared-footer .u-icon svg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* --- FIX: RESTORE ORIGINAL BRAND COLORS --- */
+.custom-shared-footer .u-social-facebook { color: #3b5998 !important; }
+.custom-shared-footer .u-social-linkedin { color: #007ab9 !important; }
+
+/* --- LINKS & LIST FORMATTING --- */
+.custom-shared-footer .style1 { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+.custom-shared-footer .style1 li { margin-bottom: 10px !important; }
+.custom-shared-footer .style1 a { color: #ffffff !important; text-decoration: none !important; }
+.custom-shared-footer .style1 a:hover { text-decoration: underline !important; }
+
+/* --- RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE) --- */
+@media (max-width: 1199px) {
+  .custom-shared-footer .u-sheet-1 { min-height: 158px; }
+  .custom-shared-footer .u-layout-cell-1, .custom-shared-footer .u-layout-cell-2 { min-height: 227px; }
+  .custom-shared-footer .u-custom-html-1 { height: auto; margin-right: 11px; }
+}
+
+@media (max-width: 991px) {
+  .custom-shared-footer .u-layout-cell-1 { min-height: 100px; }
+  .custom-shared-footer .u-custom-html-1 { margin-right: 0; }
+  .custom-shared-footer .u-layout-cell-2 { min-height: 232px; }
+  .custom-shared-footer .u-text-2 { width: auto; margin-right: 19px; }
+  .custom-shared-footer .u-social-icons-1 { margin-right: 48px; }
+}
+
+@media (max-width: 767px) {
+  .custom-shared-footer .u-sheet-1 { min-height: 359px; }
+  .custom-shared-footer .u-layout-wrap-1 { width: 540px; margin: 5px 0; }
+  .custom-shared-footer .u-layout-cell-1 { min-height: 201px; }
+  .custom-shared-footer .u-container-layout-1 { padding-top: 0; padding-bottom: 0; }
+  .custom-shared-footer .u-text-1 { width: auto; margin-top: 39px; margin-left: auto; }
+  .custom-shared-footer .u-custom-html-1 { width: 440px; margin: 9px auto -10px; }
+  .custom-shared-footer .u-layout-cell-2 { min-height: 148px; }
+  .custom-shared-footer .u-container-layout-2 { padding: 0 10px; }
+  .custom-shared-footer .u-text-2 { margin-top: 0; margin-right: auto; }
+  .custom-shared-footer .u-social-icons-1 { margin-top: 10px; margin-right: auto; }
+}
+
+@media (max-width: 575px) {
+  .custom-shared-footer .u-sheet-1 { min-height: 290px; }
+  .custom-shared-footer .u-layout-wrap-1 { width: 340px; margin-top: 1px; margin-bottom: 1px; }
+  .custom-shared-footer .u-layout-cell-1 { min-height: 178px; }
+  .custom-shared-footer .u-text-1 { margin-top: 42px; }
+  .custom-shared-footer .u-custom-html-1 { width: 340px; margin-top: 0; margin-left: 0; margin-right: 0; }
+  .custom-shared-footer .u-layout-cell-2 { min-height: 145px; }
+}
