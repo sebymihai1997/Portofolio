@@ -75,6 +75,17 @@
 /* --- FIX: RESTORE ORIGINAL BRAND COLORS --- */
 .custom-shared-footer .u-social-facebook { color: #3b5998 !important; }
 .custom-shared-footer .u-social-linkedin { color: #007ab9 !important; }
+.custom-shared-footer .u-social-email {
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+}
+
+.custom-shared-footer .u-social-email svg {
+  width: 66% !important;
+  height: 66% !important;
+  top: 17% !important;
+  left: 17% !important;
+}
 
 /* --- LINKS & LIST FORMATTING --- */
 .custom-shared-footer .style1 { list-style: none !important; padding: 0 !important; margin: 0 !important; }
