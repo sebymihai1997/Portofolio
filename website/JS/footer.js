@@ -19,7 +19,7 @@ function loadFooter(basePath) {
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
-                  <p class="u-large-text u-text u-text-default u-text-variant u-text-2"> Connect with me</p>s
+                  <p class="u-large-text u-text u-text-default u-text-variant u-text-2"> Connect with me</p>
                   <div class="u-social-icons u-spacing-20 u-social-icons-1">
                     <a class="u-social-url" target="_blank" href="https://www.facebook.com/mer00s/" title="Facebook">
                       <span class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-1">

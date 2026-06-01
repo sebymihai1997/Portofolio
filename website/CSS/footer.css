@@ -20,12 +20,20 @@
   min-height: 275px;
 }
 
+.custom-shared-footer .u-layout-cell-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .custom-shared-footer .u-container-layout-1 {
   padding: 30px 0;
 }
 
 .custom-shared-footer .u-container-layout-2 {
   padding: 30px;
+  text-align: center;
+  width: 100%;
 }
 
 .custom-shared-footer .u-text-1 {
@@ -35,7 +43,7 @@
 
 .custom-shared-footer .u-text-2 {
   font-size: 1.25rem;
-  margin: 58px 50px 0 auto;
+  margin: 0 auto 0;
   color: #ffffff !important;
 }
 
@@ -49,9 +57,10 @@
   white-space: nowrap;
   height: 48px;
   min-height: 16px;
-  width: 116px;
+  width: auto;
   min-width: 52px;
-  margin: 19px 79px 0 auto;
+  margin: 19px auto 0;
+  display: inline-block;
 }
 
 /* --- FIX: PREVENT VERTICAL STACKING / DOUBLE SVG BUG --- */
