@@ -1,0 +1,130 @@
+<!--
+    Master Thesis - Air Quality Monitoring System
+    Student: Mihai Sebastian-Andrei
+    
+    index.html
+    Web Dashboard for Indoor Air Quality Monitoring System
+    - Displays real-time and historical data for IAQ, Temperature, Humidity, CO2, VOCs, and Dust
+    - Interactive charts using Chart.js library
+    - Modal dialogs for additional information 
+    - Live data updates via JavaScript
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indoor Air Quality Dashboard</title>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <div class="header-container">
+      <h1>Indoor Air Quality Monitor</h1>
+      <div id="global_acc" class="acc-badge-global" onclick="openModal('acc')">
+          Accuracy: -- <span class="acc-info-icon">i</span>
+      </div>
+  </div>
+  
+  <div class="meta">
+    <span class="pill">Refresh: <span id="refreshSec">5s</span></span>
+    
+    <select id="timeSelect" class="pill-select" onchange="updateTimeWindow()">
+      <option value="30">Last 30 min</option>
+      <option value="60" selected>Last hour</option>
+      <option value="360">Last 6 hours</option>
+      <option value="720">Last 12 hours</option>
+      <option value="1440">Last 24 hours</option>
+      <option value="4320">Last 3 days</option>
+    </select>
+    
+    <span class="pill">Locations: <span id="locs">—</span></span>
+    <button id="pauseBtn" class="ctrl-btn">Pause</button>
+  </div>
+
+  <div class="row">
+    
+    <div class="card">
+      <div class="card-header">
+        <div class="title-group">
+            <h3>IAQ Index</h3>
+            <button class="info-btn" onclick="openModal('iaq')">i</button>
+        </div>
+        <div><span id="val_iaq" class="live-val">--</span></div>
+      </div>
+      <div class="chart-container"><canvas id="iaq"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="title-group">
+            <h3>Temperature</h3>
+            <button class="info-btn" onclick="openModal('temp')">i</button>
+        </div>
+        <div><span id="val_temp" class="live-val">--</span><span class="unit">°C</span></div>
+      </div>
+      <div class="chart-container"><canvas id="temp"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="title-group">
+            <h3>Humidity</h3>
+            <button class="info-btn" onclick="openModal('hum')">i</button>
+        </div>
+        <div><span id="val_rh" class="live-val">--</span><span class="unit">%</span></div>
+      </div>
+      <div class="chart-container"><canvas id="rh"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="title-group">
+            <h3>eCO₂</h3>
+            <button class="info-btn" onclick="openModal('co2')">i</button>
+        </div>
+        <div><span id="val_co2" class="live-val">--</span><span class="unit">ppm</span></div>
+      </div>
+      <div class="chart-container"><canvas id="co2"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="title-group">
+            <h3>VOCs</h3>
+            <button class="info-btn" onclick="openModal('voc')">i</button>
+        </div>
+        <div><span id="val_voc" class="live-val">--</span><span class="unit">ppb</span></div>
+      </div>
+      <div class="chart-container"><canvas id="voc"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="title-group">
+            <h3>Dust</h3>
+            <button class="info-btn" onclick="openModal('dust')">i</button>
+        </div>
+        <div><span id="val_dust" class="live-val">--</span><span class="unit">mg/m³</span></div>
+      </div>
+      <div class="chart-container"><canvas id="dust"></canvas></div>
+    </div>
+  </div>
+
+  <div id="infoModal" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-box">
+          <button class="modal-close" onclick="closeModal(null)">&times;</button>
+          <h2 id="mTitle" class="modal-title">Info</h2>
+          <div id="mBody" class="modal-content"></div>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
