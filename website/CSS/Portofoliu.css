@@ -184,8 +184,15 @@
 
 .u-section-2 .u-image-1 {
   min-height: 400px;
-  background-image: url("../images/board.jpg");
   background-position: 50% 50%;
+}
+
+#carousel_2842 .u-image-1 {
+  background-image: url("../images/AIQ2/System.jpg");
+}
+
+#carousel_v1 .u-image-1 {
+  background-image: url("../images/board.jpg");
 }
 
 .u-section-2 .u-container-layout-2 {
