@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator E-Lichid la Cântar (Pro)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h2 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        input[type="number"] {
+            width: 100%; padding: 10px; border: 1px solid #ccc;
+            border-radius: 4px; box-sizing: border-box; font-size: 16px;
+        }
+        .toggle-group {
+            background: #fdfbf7; padding: 15px; border: 1px solid #e1d8c1;
+            border-radius: 6px; margin-bottom: 15px;
+        }
+        .checkbox-label {
+            display: flex; align-items: center; font-weight: bold; color: #d35400; cursor: pointer;
+        }
+        .checkbox-label input { width: auto; margin-right: 10px; transform: scale(1.3); }
+        button {
+            width: 100%; padding: 12px; background-color: #3498db; color: white;
+            border: none; border-radius: 4px; font-size: 16px; font-weight: bold;
+            cursor: pointer; transition: background 0.3s;
+        }
+        button:hover { background-color: #2980b9; }
+        
+        /* Stiluri pentru Tabelul de Rezultate */
+        .vape-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+        .vape-table th, .vape-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #d1e5eb;
+        }
+        .vape-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        .vape-table th:nth-child(2), .vape-table td:nth-child(2),
+        .vape-table th:nth-child(3), .vape-table td:nth-child(3) {
+            text-align: right;
+        }
+        .vape-table tr.highlight {
+            background-color: #fff0e6;
+            color: #d35400;
+            font-weight: bold;
+        }
+        .vape-table tr.total-row {
+            font-weight: bold;
+            font-size: 1.1em;
+            background-color: #e8f4f8;
+            border-top: 2px solid #3498db;
+        }
+        .info-summary {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            font-size: 0.95em;
+            border-left: 3px solid #7f8c8d;
+        }
+        .warning { color: #e74c3c; font-size: 0.9em; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Ingrediente de Bază</h2>
+        
+        <div class="form-group">
+            <label for="nicshots">Număr Nicshot-uri (10ml, 20mg/ml, 70VG/30PG)</label>
+            <input type="number" id="nicshots" value="2" min="0" step="1">
+        </div>
+
+        <div class="form-group">
+            <label for="addedVG">Bază 100% VG adăugată suplimentar (ml)</label>
+            <input type="number" id="addedVG" value="20" min="0" step="1">
+        </div>
+
+        <div class="form-group">
+            <label for="flavorPct">Concentrație Aromă (%) - Considerată 100% PG</label>
+            <input type="number" id="flavorPct" value="16" min="0" max="100" step="0.5">
+        </div>
+
+        <div class="toggle-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="useTarget" checked onchange="toggleNicMode()">
+                Vreau să setez o concentrație țintă de nicotină finală
+            </label>
+            
+            <div id="manualNicMode" style="margin-top: 15px; display: none;">
+                <label for="pureNic">Nicotină Pură adăugată manual (ml) - 1000mg/ml (PG)</label>
+                <input type="number" id="pureNic" value="0" min="0" step="0.1">
+            </div>
+
+            <div id="targetNicMode" style="margin-top: 15px;">
+                <label for="targetNic">Concentrație Țintă Dorită (mg/ml)</label>
+                <input type="number" id="targetNic" value="18" min="0" step="0.1">
+            </div>
+        </div>
+
+        <button onclick="calculate()">Calculează Rețeta</button>
+    </div>
+
+    <div class="card" id="resultsCard" style="display: none;">
+        <h2>Rețeta Finală de Mixat</h2>
+        
+        <table class="vape-table">
+            <thead>
+                <tr>
+                    <th>Ingredient de adăugat</th>
+                    <th>Volum (ml)</th>
+                    <th>Greutate (g)</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
+
+        <div class="info-summary" id="infoSummary">
+            </div>
+
+        <p class="warning">*Atenție: Pune sticla goală pe cântar, dă „TARE” (0.00g), apoi adaugă ingredientele pe rând, ghidându-te după coloana de grame (g).</p>
+    </div>
+
+    <script>
+        function toggleNicMode() {
+            const isTargetMode = document.getElementById('useTarget').checked;
+            document.getElementById('manualNicMode').style.display = isTargetMode ? 'none' : 'block';
+            document.getElementById('targetNicMode').style.display = isTargetMode ? 'block' : 'none';
+        }
+
+        function calculate() {
+            const shots = parseFloat(document.getElementById('nicshots').value) || 0;
+            const flavPct = parseFloat(document.getElementById('flavorPct').value) || 0;
+            const addedVG = parseFloat(document.getElementById('addedVG').value) || 0;
+            const isTargetMode = document.getElementById('useTarget').checked;
+
+            if (flavPct >= 100) { alert("Aroma nu poate fi 100%."); return; }
+
+            // Constante de densitate (g/ml)
+            const D_VG = 1.26;
+            const D_PG = 1.036;
+            const D_NIC = 1.01; 
+            const D_SHOT = (0.70 * D_VG) + (0.30 * D_PG); // 1.1928 g/ml
+
+            let pureNic = 0;
+
+            if (isTargetMode) {
+                const targetMgMl = parseFloat(document.getElementById('targetNic').value) || 0;
+                const K = targetMgMl / (1 - (flavPct / 100));
+                const V_shots = shots * 10;
+                
+                const numerator = (K * (V_shots + addedVG)) - (V_shots * 20);
+                const denominator = 1000 - K;
+
+                if (denominator <= 0) {
+                    alert("Ținta este prea mare pentru aceste ingrediente."); return;
+                }
+
+                pureNic = numerator / denominator;
+
+                if (pureNic < 0) {
+                    alert("Nicshot-urile oferă deja o concentrație mai mare decât ținta pentru acest volum. Adaugă mai mult VG sau scade din nicshot-uri.");
+                    return;
+                }
+            } else {
+                pureNic = parseFloat(document.getElementById('pureNic').value) || 0;
+            }
+
+            // Calcule volume (ml)
+            const shotsMl = shots * 10;
+            const vBase = shotsMl + pureNic + addedVG;
+            const vTotal = vBase / (1 - (flavPct / 100));
+            const flavMl = vTotal - vBase;
+
+            // Calcule Greutate (g) = Volum (ml) * Densitate (g/ml)
+            const shotsG = shotsMl * D_SHOT;
+            const addedVGG = addedVG * D_VG;
+            const pureNicG = pureNic * D_NIC;
+            const flavG = flavMl * D_PG;
+            const totalG = shotsG + addedVGG + pureNicG + flavG;
+
+            // Indicatori finali nicotină și VG/PG
+            const totalNicMg = (shotsMl * 20) + (pureNic * 1000);
+            const finalNicMgMl = vTotal > 0 ? (totalNicMg / vTotal) : 0;
+            const vgMl = (shotsMl * 0.70) + addedVG;
+            const pgMl = (shotsMl * 0.30) + pureNic + flavMl;
+            const vgPct = vTotal > 0 ? ((vgMl / vTotal) * 100) : 0;
+            const pgPct = vTotal > 0 ? ((pgMl / vTotal) * 100) : 0;
+
+            // Generare rânduri tabel
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = `
+                <tr>
+                    <td>Nicshot-uri (20mg, 70/30)</td>
+                    <td>${shotsMl.toFixed(2)} ml</td>
+                    <td>${shotsG.toFixed(2)} g</td>
+                </tr>
+                <tr>
+                    <td>Bază pură 100% VG</td>
+                    <td>${addedVG.toFixed(2)} ml</td>
+                    <td>${addedVGG.toFixed(2)} g</td>
+                </tr>
+                <tr class="highlight">
+                    <td>Nicotină pură (1000mg/ml)</td>
+                    <td>${pureNic.toFixed(2)} ml</td>
+                    <td>${pureNicG.toFixed(2)} g</td>
+                </tr>
+                <tr class="highlight">
+                    <td>Aromă concentrată (100% PG)</td>
+                    <td>${flavMl.toFixed(2)} ml</td>
+                    <td>${flavG.toFixed(2)} g</td>
+                </tr>
+                <tr class="total-row">
+                    <td>SUMĂ TOTALĂ Lichid</td>
+                    <td>${vTotal.toFixed(2)} ml</td>
+                    <td>${totalG.toFixed(2)} g</td>
+                </tr>
+            `;
+
+            // Afișare detalii tehnice sub tabel
+            const infoSummary = document.getElementById('infoSummary');
+            infoSummary.innerHTML = `
+                <strong>Rezultat analiză chimică:</strong><br>
+                • Concentrație finală nicotină: <strong>${finalNicMgMl.toFixed(2)} mg/ml</strong><br>
+                • Raport real VG / PG: <strong>${vgPct.toFixed(0)}% VG / ${pgPct.toFixed(0)}% PG</strong>
+            `;
+
+            document.getElementById('resultsCard').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
