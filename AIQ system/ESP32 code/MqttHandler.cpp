@@ -15,11 +15,11 @@
 #include <ESPmDNS.h>
 
 // WiFi configuration
-const char* WIFI_SSID_HOME = "Caministii";
-const char* WIFI_PASS_HOME = "305qazwsx";
+const char* WIFI_SSID_HOME = "xxxxxxxxx";
+const char* WIFI_PASS_HOME = "xxxxxxxxx";
 
-const char* WIFI_SSID_HOTSPOT = "Xiaomi 14T";
-const char* WIFI_PASS_HOTSPOT = "12345678";
+const char* WIFI_SSID_HOTSPOT = "xxxxxxxx";
+const char* WIFI_PASS_HOTSPOT = "xxxxxxxxx";
 
 // MQTT configuration
 const char* MQTT_BROKER_HOSTNAME = "raspberrypi"; 
