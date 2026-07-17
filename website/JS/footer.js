@@ -10,8 +10,8 @@ function loadFooter(basePath) {
                   <h3 class="u-align-center-sm u-align-center-xs u-text u-text-default u-text-1">Last Post</h3>
                   <div class="u-clearfix u-custom-html u-custom-html-1">
                     <ul class="style1">
-                      <li><a href="${basePath}Infrarosu.html">Infrared communication</a></li>
-                      <li><a href="${basePath}Aer.html">Air Quality Monitoring System V1</a></li>
+                      <li><a href="${basePath}Aer2.html">Indoor Air Quality Monitoring System V2</a></li>
+                      <li><a href="${basePath}Infrarosu.html">Infrared Communication</a></li>
                       <li><a href="${basePath}Cantar.html">Digital Scale</a></li>
                     </ul>
                   </div>

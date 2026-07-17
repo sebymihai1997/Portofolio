@@ -761,3 +761,26 @@
     min-height: 145px;
   }
 }
+
+
+@media (min-width: 992px) {
+  
+  .u-layout-row.inversat {
+    display: flex !important;
+    flex-direction: row-reverse !important; 
+    width: 100% !important;
+  }
+
+  .u-layout-row.inversat > .u-layout-cell {
+    display: inline-block !important;
+    float: none !important;
+    vertical-align: top !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-layout-row.inversat {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}

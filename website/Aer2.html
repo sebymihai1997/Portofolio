@@ -58,14 +58,46 @@
         <div class="u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="892" data-image-height="892" data-href="../index.html" data-page-id="203322119"></div>
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-74f9">
+  <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    <div class="fr-view u-align-center u-clearfix u-rich-text u-text u-text-1">
+      <h1 style="text-align: center;">Indoor Air Quality Monitoring System V2</h1>
+      <p style="text-align: justify;">&nbsp; &nbsp;This is the second version of my indoor air quality project. I kept the same goal as before: monitor the air in a room and know when it needs fresh air.</p>
+      <p style="text-align: justify;">&nbsp; &nbsp;In the first version I had too many cables and the system only worked while connected to a laptop. With V2 I wanted a cleaner setup that could run by itself and send updates without extra hardware attached.</p>
+      <p style="text-align: justify;"><img src="images/AIQ2/System.jpg" width="570" style="width: 570px;" class="fr-dib fr-fic"></p>
+      <p style="text-align: justify;">&nbsp; &nbsp;I kept the same sensor types: temperature and humidity, dust density, and gas level. The ESP32 collects the readings, smooths out noise, and sends the values over WiFi to a dashboard that can be viewed remotely.</p>
+      <p style="text-align: justify;">&nbsp; &nbsp;The goal was to make the system useful every day, not just a prototype. Now it can measure air quality continuously, store readings when the network is down, and update the dashboard as soon as the connection returns.</p>
+      
+      <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 30px; margin-bottom: 10px;">
+        
+        <a href="https://github.com/sebymihai1997/Portofolio/tree/c5742afb3a8d26146520206cd370f1d534b38b53/AIQ%20system/ESP32%20code" 
+           target="_blank" 
+           rel="noopener" 
+           class="u-btn u-button-style u-palette-1-base u-btn-1" 
+           style="margin: 0; padding: 12px 24px; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; border-radius: 4px; text-decoration: none;">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          ESP32 Firmware
+        </a>
+
+        <a href="https://github.com/sebymihai1997/Portofolio/tree/c5742afb3a8d26146520206cd370f1d534b38b53/AIQ%20system/AIQ_server" 
+           target="_blank" 
+           rel="noopener" 
+           class="u-btn u-button-style u-border-2 u-border-palette-1-base u-btn-none" 
+           style="margin: 0; padding: 12px 24px; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; border-radius: 4px; background: transparent; color: #478ac9; text-decoration: none;">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Raspberry Pi Server
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+    <section class="u-clearfix u-section-1" id="sec-motivation">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <div class="fr-view u-align-center u-clearfix u-rich-text u-text u-text-1">
-          <h1 style="text-align: center;">Indoor Air Quality Monitoring System V2</h1>
-          <p style="text-align: justify;">&nbsp; &nbsp;TestThis is the second version of my indoor air quality project. I kept the same goal as before: monitor the air in a room and know when it needs fresh air.</p>
-          <p style="text-align: justify;">&nbsp; &nbsp;In the first version I had too many cables and the system only worked while connected to a laptop. With V2 I wanted a cleaner setup that could run by itself and send updates without extra hardware attached.</p>
-          <p style="text-align: justify;"><img src="images/AIQ2/System.jpg" width="570" style="width: 570px;" class="fr-dib fr-fic"></p>
-          <p style="text-align: justify;">&nbsp; &nbsp;I kept the same sensor types: temperature and humidity, dust density, and gas level. The ESP32 collects the readings, smooths out noise, and sends the values over WiFi to a dashboard that can be viewed remotely.</p>
-          <p style="text-align: justify;">&nbsp; &nbsp;The goal was to make the system useful every day, not just a prototype. Now it can measure air quality continuously, store readings when the network is down, and update the dashboard as soon as the connection returns.</p>
+          <h2 style="text-align: center;">The Motivation Behind the Project</h2>
+          <p style="text-align: justify;">&nbsp; &nbsp;According to reports from the U.S. Environmental Protection Agency (EPA), the indoor environment can be two to five times more polluted than outdoor air. Given that our modern, energy-efficient buildings are often hermetically sealed, pollutants can accumulate dangerously over time.</p>
+          <p style="text-align: justify;">&nbsp; &nbsp;Gases like Carbon Dioxide (CO2) and Volatile Organic Compounds (VOCs) are mostly odorless and colorless. Long-term exposure to these poor air quality indicators can reduce cognitive function, trigger allergies, and cause severe respiratory issues. This system was built to provide an affordable, portable, and continuous monitoring solution to bring awareness and mental peace to our daily enclosed environments.</p>
         </div>
       </div>
     </section>
@@ -139,6 +171,16 @@
         </div>
       </div>
     </section>
+    <section class="u-clearfix u-section-1" id="sec-software">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="fr-view u-align-center u-clearfix u-rich-text u-text u-text-1">
+          <h2 style="text-align: center;">Software & Network Communication</h2>
+          <p style="text-align: justify;">&nbsp; &nbsp;The software architecture is modular and designed for resilience. The ESP32 node is programmed in C++ and handles data acquisition, utilizing the <strong>Bosch BSEC library</strong> to fuse raw sensor data into an accurate Index of Air Quality (IAQ).</p>
+          <p style="text-align: justify;">&nbsp; &nbsp;For communication, the system uses the lightweight <strong>MQTT protocol</strong>. The ESP32 acts as an MQTT publisher, sending telemetry data to a local Raspberry Pi 4 acting as the broker. To prevent data loss during network instability, the ESP32 is equipped with connection retry logic and fallback display functions.</p>
+          <p style="text-align: justify;">&nbsp; &nbsp;The backend runs on Python, employing multithreading to manage the MQTT ingestion while simultaneously serving a web interface. The data is parsed, timestamps are standardized to UTC, and everything is safely logged into an SQLite database via SQLAlchemy.</p>
+        </div>
+      </div>
+    </section>
     <section class="u-clearfix u-section-3" id="sec-61e3">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-carousel u-expanded-width u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-thumbnails-position-left u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-4bf7">
@@ -147,8 +189,6 @@
             <li data-u-target="#carousel-4bf7" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
             <li data-u-target="#carousel-4bf7" data-u-slide-to="2" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
             <li data-u-target="#carousel-4bf7" data-u-slide-to="3" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-            <li data-u-target="#carousel-4bf7" data-u-slide-to="4" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-            <li data-u-target="#carousel-4bf7" data-u-slide-to="5" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
           </ol>
           <div class="u-carousel-inner u-gallery-inner u-gallery-inner-1" role="listbox">
             <div class="u-active u-carousel-item u-gallery-item u-carousel-item-1">
@@ -186,6 +226,20 @@ L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.3
 c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
             </span>
           </a>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-1" id="sec-casestudy">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="fr-view u-align-center u-clearfix u-rich-text u-text u-text-1">
+          <h2 style="text-align: center;">Real-World Testing: 24-Hour Case Study</h2>
+          <p style="text-align: justify;">&nbsp; &nbsp;To validate the system, I conducted a 24-hour continuous test in a 12 square-meter room. The scenario mimicked typical winter conditions: windows and doors mostly closed with no mechanical ventilation. The subject performed daily activities such as sleeping, studying, and reading.</p>
+          <p style="text-align: justify;">&nbsp; &nbsp;<strong>Key Findings:</strong></p>
+          <ul>
+            <li style="text-align: justify;"><strong>CO2 Accumulation:</strong> With windows closed, eCO2 levels steadily rose to average around 680 ppm, leading to reported losses in concentration and mild headaches. Upon opening the window, levels rapidly dropped to baseline.</li>
+            <li style="text-align: justify;"><strong>VOC Spikes:</strong> Volatile Organic Compounds hovered around 800 ppb with windows closed, occasionally spiking over 1400 ppb during specific activities. Ventilation immediately cleared the accumulated pollutants.</li>
+            <li style="text-align: justify;"><strong>IAQ Index:</strong> The overall air quality degraded significantly within just an hour of closing the window, proving that simply "airing out" a room once a day is insufficient for maintaining a healthy environment.</li>
+          </ul>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 1097px;
+  min-height: auto;
+  padding-bottom: 40px;
 }
 
 .u-section-1 .u-text-1 {
@@ -106,7 +107,7 @@
     grid-template-columns: auto;
   }
 }.u-section-2 .u-sheet-1 {
-  min-height: 260px;
+  min-height: auto;
 }
 
 .u-section-2 .u-text-1 {
@@ -125,7 +126,7 @@
     margin-right: 0;
   }
 }.u-section-3 .u-sheet-1 {
-  min-height: 562px;
+  min-height: auto;
 }
 
 .u-section-3 .u-gallery-1 {
